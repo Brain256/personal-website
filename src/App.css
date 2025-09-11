@@ -7,20 +7,47 @@ body {
 
 .page-container {
     display:grid; 
-    grid-template-rows: 1fr 11fr; 
+    grid-template-rows: 100px 1fr; 
     height:100vh; 
 }
 
 .content-container {
+  background-color:rgb(33, 19, 82); 
+  height:100%; 
+}
+
+.header {
+  height:100%; 
   display:flex; 
   justify-content:center; 
   align-items:center; 
   color:white; 
-  background-color:rgb(33, 19, 82); 
 }
 
 .intro {
-  font-size:3rem; 
+  font-size:5rem; 
   font-weight:bold; 
 }
+
+.intro-sub {
+  font-size:2rem; 
+}
+
+.header {
+  text-align:center; 
+}
+
+.project-container {
+  padding:20px; 
+  display:grid; 
+  gap:10px; 
+  background-color:rgb(33, 19, 82); 
+}
+
+.project-container > h2 {
+  color:white; 
+  font-size:3rem; 
+}
+
+
 

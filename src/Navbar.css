@@ -1,6 +1,8 @@
 .links {
+    margin:0px; 
+    padding:0px; 
     display:flex; 
-    gap:20px; 
+    gap:30px; 
 }
 
 .nav-container {
@@ -19,14 +21,19 @@
 }
 
 .links > div {
+    box-sizing:border-box; 
+    margin:0px; 
     height:100%; 
 }
 
 .links > div > a {
+    padding:20px; 
     text-decoration:none; 
     color:white; 
 }
 
 .links > div > a:hover {
+    transition: ease-in-out 0.25s; 
     background-color:rgb(105, 105, 105); 
+    border-radius:20px; 
 }
