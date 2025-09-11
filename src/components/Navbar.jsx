@@ -7,10 +7,10 @@ function Navbar() {
             <div className="nav-container">
                 <div className="name">Brian Yin</div>
                 <div className="links">
-                    <div><a href="">Home</a></div>
-                    <div><a href="">Projects</a></div>
-                    <div><a href="">Experience</a></div>
-                    <div><a href="">Contact</a></div>
+                    <div><a href="#header">Home</a></div>
+                    <div><a href="#project-container">Projects</a></div>
+                    <div><a href="#exp-container">Experience</a></div>
+                    <div><a href="#contact-container">Contact</a></div>
                 </div>
             </div>
         </>

@@ -1,3 +1,5 @@
+
+
 .links {
     margin:0px; 
     padding:0px; 
@@ -12,7 +14,7 @@
   align-items:center; 
   display:flex; 
   justify-content:space-between; 
-  background-color:rgb(2, 6, 47); 
+  background-color:rgba(2, 6, 47, 0.5); 
 }
 
 .name {
@@ -29,11 +31,14 @@
 .links > div > a {
     padding:20px; 
     text-decoration:none; 
+    background-color:rgb(33, 19, 82);
+    border-radius:20px;  
     color:white; 
 }
 
 .links > div > a:hover {
     transition: ease-in-out 0.25s; 
-    background-color:rgb(105, 105, 105); 
-    border-radius:20px; 
+    background-color:rgb(49, 28, 124); 
+    box-shadow:0 0px 15px rgb(31, 215, 247); 
+    
 }
