@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './Navbar.jsx'
 import Project from './Project.jsx'
+import ExpCard from './ExpCard.jsx'
 
 const projects = [
   {
@@ -20,6 +21,18 @@ const projects = [
   }
 ]
 
+const experiences = [
+  {
+    company: "Temp",
+    position: "Software Engineer",
+    description: "blah blah blah"
+  }, 
+  {
+    company: "Temp",
+    position: "Software Engineer",
+    description: "blah blah blah"
+  }
+]
 function App() {
 
   return (
@@ -41,6 +54,13 @@ function App() {
               {projects.map((project, index) => (
                 <Project key={index} {...project} />
               ))}
+          </div>
+
+          <div className="exp-container">
+            <h2>Experience</h2>
+            {experiences.map((exp, index) => (
+              <ExpCard key={index} {...exp}/>
+            ))}
           </div>
         </div>
       </div>
