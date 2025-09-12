@@ -1,0 +1,26 @@
+.project-card, .exp-card {
+    display:flex; 
+    gap:20px; 
+    background-color:rgb(23, 2, 49); 
+    padding:100px 50px; 
+    color:white; 
+    border-radius:20px; 
+    box-shadow:0 0px 15px rgb(31, 215, 247); 
+    transition: ease-in-out 0.25s; 
+}
+
+.title {
+    font-size:2rem; 
+    font-weight:bold; 
+}
+
+.card-text {
+    display:grid; 
+    gap:10px; 
+    height:auto; 
+}
+
+.project-card:hover, .exp-card:hover {
+    transform:scale(1.05); 
+    box-shadow:0 0px 25px rgb(192, 214, 218); 
+}

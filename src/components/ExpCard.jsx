@@ -1,5 +1,5 @@
 
-import './ExpCard.css'
+import './Cards.css'
 
 function ExpCard({company, position, description}) {
     return (
