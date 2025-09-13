@@ -1,4 +1,6 @@
 .project-card, .exp-card {
+    position:relative; 
+    z-index:1; 
     display:flex; 
     gap:20px; 
     background-color:rgb(23, 2, 49); 
