@@ -1,13 +1,20 @@
 
 import './Cards.css'
 
-function ExpCard({company, position, description}) {
+function ExpCard({company, position, description, img}) {
     return (
         <>
-            <div className="exp-card">
-                <div>{company}</div>
-                <div>{position}</div>
-                <div>{description}</div>
+             <div className="exp-card">
+                <div className="card-text">
+                    <div className="title">{position}</div>
+                    <div className="company">{company}</div>
+                    <ul className="desc-list">{description.map((point, index) => (
+                        <li key={index}>{point}</li>
+                    ))}</ul>
+                    
+                </div>
+                
+                
             </div>
         </>
     )

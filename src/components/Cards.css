@@ -2,11 +2,12 @@
     display:flex; 
     gap:20px; 
     background-color:rgb(23, 2, 49); 
-    padding:100px 50px; 
+    padding:50px 50px; 
     color:white; 
     border-radius:20px; 
     box-shadow:0 0px 15px rgb(31, 215, 247); 
     transition: ease-in-out 0.25s; 
+    height:auto;
 }
 
 .title {
@@ -14,13 +15,40 @@
     font-weight:bold; 
 }
 
-.card-text {
-    display:grid; 
-    gap:10px; 
-    height:auto; 
+.skills, .company {
+    font-style:italic; 
+    line-height:2; 
+}
+
+.desc-list {
+    margin:0px; 
+    padding:10px; 
 }
 
 .project-card:hover, .exp-card:hover {
     transform:scale(1.05); 
     box-shadow:0 0px 25px rgb(192, 214, 218); 
+}
+
+.project-links {
+    display:flex; 
+    height:70px; 
+    align-items:center; 
+    gap:10px; 
+}
+
+.demo {
+    padding:5px; 
+    font-style:bold; 
+    text-decoration:none; 
+    color:rgb(31, 215, 247); 
+    border:2px solid rgb(31, 215, 247); 
+    border-radius:10px; 
+    background-color:rgb(3, 3, 3); 
+    transition: ease-in-out 0.25s; 
+}
+
+.demo:hover {
+    background-color: rgb(31, 215, 247); 
+    color:black; 
 }

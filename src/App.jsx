@@ -7,31 +7,39 @@ import ExpCard from './components/ExpCard.jsx'
 const projects = [
   {
     title: "WRO Future Engineers",
-    description: "autonomous car competition", 
-    skills: "python", 
-    img: "src/assets/linkedin.svg",
-    link: "https://github.com/kylln20/WRO_FE_2023-24"
+    description: ["National and international self-driving RC car competition", "Achieved 1st in Canada and 5th in the World in 2024", "Developed autonomous navigation software of vehicle using Python and OpenCV computer vision", "utilized a PD controller for smooth steering navigation"], 
+    skills: "Python, OpenCV, Raspberry Pi", 
+    img: "src/assets/WRO.png",
+    github: "https://github.com/kylln20/WRO_FE_2023-24",
+    website:null, 
+    youtube:"https://www.youtube.com/watch?v=WGgbSJJY70c"
   }, 
   {
     title: "Punch Perfect",
-    description: "motion detecting boxing game", 
-    skills: "python", 
-    img: "src/assets/linkedin.svg", 
-    link: "https://github.com/AaronXu07/CV-Boxing-Game"
+    description: ["Created a pose-detection boxing game for a school hackathon", "utilizes OpenCV and MediaPipe for real-time pose detection", "Designed mutiple game modes including target practice and reaction time"], 
+    skills: "Python, MediaPipe, OpenCV, Pygame", 
+    img: "src/assets/Punch-Perfect.png", 
+    github: "https://github.com/AaronXu07/CV-Boxing-Game",
+    website: null, 
+    youtube: "https://www.youtube.com/watch?v=mWZ30z9cGt8"
   },
   {
     title: "2D Crossy Road",
-    description: "Web Game inspired by Crossy Road from a top down perspective", 
-    skills: "python", 
-    img: "src/assets/linkedin.svg",
-    link: "https://2d-crossy-road.vercel.app/"
+    description: ["Web Game inspired by Crossy Road from a top down perspective", "Made using the p5 Javascript library for its drawing functionality", "Final project for grade 12 computer science class"], 
+    skills: "P5 Javascript, HTML, CSS", 
+    img: "src/assets/crossy-road.jpg",
+    github: "https://github.com/Brain256/2D-Crossy-Road",
+    website: "https://2d-crossy-road.vercel.app/",
+    youtube: null
   },
   {
     title: "2x2 Rubik's Cube Solver",
-    description: "Arduino Robot designed to solve a 2x2 Rubik's Cube", 
-    skills: "python", 
-    img: "src/assets/linkedin.svg", 
-    link: "https://github.com/Brain256/2x2-Solver"
+    description: ["Created a robot using 3D-printed parts to solve a 2x2 Rubik's cube", "implements BFS to find quickest first side and uses Ortega method for the remainer", "Utilizes OpenCV to detect colors of each face", "Implements serial communication for commanding motor movements with the arduino UNO"], 
+    skills: "Python, OpenCV, C (Arduino)", 
+    img: "src/assets/cube.png", 
+    github: "https://github.com/Brain256/2x2-Solver",
+    website: null, 
+    youtube: "https://www.youtube.com/shorts/pykEr9slMbM"
   }
 ]
 
@@ -39,12 +47,14 @@ const experiences = [
   {
     company: "Leo Wong's Taekwondo & Krav Maga",
     position: "Assistant Taekwondo Instructor",
-    description: "blah blah blah"
+    description: ["Taught classes of 40+ students from ages up to 18 years old", "Recieved First Degree Black Belt Certification", "Guided students through learning discipline, skills, forms and techniques"],
+
   }, 
   {
     company: "Explorer Robotics Club",
     position: "Assistant Python Instructor",
-    description: "blah blah blah"
+    description: ["Assisted students in small groups to solve programming problems", "Taught basics of syntax, data structures, and algorithsms in Python", "Managed online classes by keeping track of recordings and attendance"],
+
   }
 ]
 function App() {
