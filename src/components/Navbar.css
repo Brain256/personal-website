@@ -62,18 +62,21 @@
 
 @media (max-width: 700px) {
     .links > div > a {
-        padding:10px; 
+        padding:9px; 
     }
     .links {
-        gap:10px; 
+        gap:5px; 
     }
 
     .name-text {
         display:none; 
     }
     .nav-container {
-        gap:1px; 
-        padding: 0px 10px; 
+        gap:0px; 
+        padding: 0px 5px; 
+    }
+    .name {
+        gap:0px;
     }
   
 }

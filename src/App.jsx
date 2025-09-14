@@ -180,7 +180,7 @@ function App() {
               <Project key={index} {...project} />
             ))}
           </div>
-          
+
           <h2>Experience</h2>
 
           <div id="exp-container">
@@ -197,18 +197,18 @@ function App() {
             <div className="contact-links">
               <div>
                 <a href="https://www.linkedin.com/in/brian-yin-1ab26a223/">
-                  <img src="/linkedin.svg" width="50" height="50" alt="Linkedin"/>
+                  <img className="contact-imgs" src="/linkedin.svg" width="50" height="50" alt="Linkedin"/>
                 </a>
                 <div>Brian Yin</div>
               </div>
               <div>
                 <a href="https://github.com/Brain256">
-                  <img src="/github.svg" width="50" height="50" alt="Github"/>
+                  <img className="contact-imgs" src="/github.svg" width="50" height="50" alt="Github"/>
                 </a>
                 <div>Brain256</div>
               </div>
               <div>
-                <img src="/gmail.png" width="50" height="50" alt="Email" />
+                <img className="contact-imgs" src="/gmail.png" width="50" height="50" alt="Email" />
                 <div>brianyin256@gmail.com</div>
               </div>
             </div>

@@ -69,6 +69,25 @@
         padding:15px; 
     }
 
+
+    .title {
+        font-size:1.8rem; 
+    }
+}
+
+@media (max-width: 500px) {
+    .project-card, .exp-card {
+        padding:15px; 
+        flex-direction:column; 
+        text-align:center; 
+        align-items:center; 
+    }
+
+    .desc-list {
+        text-align:left; 
+    }
+
+
     .title {
         font-size:1.8rem; 
     }
