@@ -5,6 +5,10 @@ body {
   font-family: 'Inter', sans-serif; 
 }
 
+* {
+    box-sizing: border-box;
+}
+
 .page-container {
     display:grid; 
     grid-template-rows: 100px 1fr; 
@@ -100,6 +104,7 @@ h2 {
   #project-container,
   #exp-container,
   #contact-container {
+    grid-template-columns: 1fr;
     padding: 20px 40px;
   }
 
@@ -122,6 +127,7 @@ h2 {
   #project-container,
   #exp-container,
   #contact-container {
+    grid-template-columns:1fr;
     padding: 15px 20px;
     gap: 20px;
   }
@@ -148,4 +154,6 @@ h2 {
   .contact-links > div {
     justify-content: center;
   }
+
+
 }

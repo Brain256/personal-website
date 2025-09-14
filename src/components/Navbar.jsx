@@ -5,7 +5,7 @@ function Navbar() {
     return (
         <>
             <div className="nav-container">
-                <div className="name"><img src="/Logo.jpg" height="50"/><div>Brian Yin</div></div>
+                <div className="name"><img src="/Logo.jpg" height="50"/><div className="name-text">Brian Yin</div></div>
                 <div className="links">
                     <div><a href="#header">Home</a></div>
                     <div><a href="#project-container">Projects</a></div>

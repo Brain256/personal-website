@@ -4,7 +4,7 @@
     display:flex; 
     gap:20px; 
     background-color:rgb(23, 2, 49); 
-    padding:50px 50px; 
+    padding:50px; 
     color:white; 
     border-radius:20px; 
     box-shadow:0 0px 15px rgb(31, 215, 247); 
@@ -63,12 +63,9 @@
 
 /* responsive  design */
 
-/* tanlet */
-@media (max-width: 1024px) {
- 
-}
-
 /* Phones */
 @media (max-width: 600px) {
- 
+    .project-card, .exp-card {
+        padding:15px; 
+    }
 }

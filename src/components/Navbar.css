@@ -46,3 +46,33 @@
     box-shadow:0 0px 15px rgb(31, 215, 247); 
     
 }
+
+@media (max-width: 1024px) {
+    .links > div > a {
+        padding:20px; 
+    }
+    .links {
+        gap:20px; 
+    }
+    .nav-container {
+        gap:10px; 
+    }
+  
+}
+
+@media (max-width: 600px) {
+    .links > div > a {
+        padding:10px; 
+    }
+    .links {
+        gap:20px; 
+    }
+
+    .name-text {
+        display:none; 
+    }
+    .nav-container {
+        gap:10px; 
+    }
+  
+}
