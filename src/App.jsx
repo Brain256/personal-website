@@ -12,7 +12,7 @@ const projects = [
     title: "WRO Future Engineers",
     description: ["National and international self-driving RC car competition", "Achieved 1st in Canada and 5th in the World in 2024", "Developed autonomous navigation software of vehicle using Python and OpenCV computer vision", "utilized a PD controller for smooth steering navigation"], 
     skills: "Python, OpenCV, Raspberry Pi", 
-    img: "src/assets/WRO.png",
+    img: "/WRO.png",
     github: "https://github.com/kylln20/WRO_FE_2023-24",
     website:null, 
     youtube:"https://www.youtube.com/watch?v=WGgbSJJY70c"
@@ -21,7 +21,7 @@ const projects = [
     title: "Punch Perfect",
     description: ["Created a pose-detection boxing game for a school hackathon", "utilizes OpenCV and MediaPipe for real-time pose detection", "Designed mutiple game modes including target practice and reaction time"], 
     skills: "Python, MediaPipe, OpenCV, Pygame", 
-    img: "src/assets/Punch-Perfect.png", 
+    img: "/Punch-Perfect.png", 
     github: "https://github.com/AaronXu07/CV-Boxing-Game",
     website: null, 
     youtube: "https://www.youtube.com/watch?v=mWZ30z9cGt8"
@@ -30,7 +30,7 @@ const projects = [
     title: "2D Crossy Road",
     description: ["Web Game inspired by Crossy Road from a top down perspective", "Made using the p5 Javascript library for its drawing functionality", "Final project for grade 12 computer science class"], 
     skills: "P5 Javascript, HTML, CSS", 
-    img: "src/assets/crossy-road.jpg",
+    img: "/crossy-road.jpg",
     github: "https://github.com/Brain256/2D-Crossy-Road",
     website: "https://2d-crossy-road.vercel.app/",
     youtube: null
@@ -39,7 +39,7 @@ const projects = [
     title: "2x2 Rubik's Cube Solver",
     description: ["Created a robot using 3D-printed parts to solve a 2x2 Rubik's cube", "implements BFS to find quickest first side and uses Ortega method for the remainer", "Utilizes OpenCV to detect colors of each face", "Implements serial communication for commanding motor movements with the arduino UNO"], 
     skills: "Python, OpenCV, C (Arduino)", 
-    img: "src/assets/cube.png", 
+    img: "/cube.png", 
     github: "https://github.com/Brain256/2x2-Solver",
     website: null, 
     youtube: "https://www.youtube.com/shorts/pykEr9slMbM"
@@ -171,38 +171,44 @@ function App() {
               </div>
             </div>
           </div>
-          
+
+          <h2>Projects</h2>
+
           <div id="project-container">
-            <h2>Projects</h2>
+            
             {projects.map((project, index) => (
               <Project key={index} {...project} />
             ))}
           </div>
+          
+          <h2>Experience</h2>
 
           <div id="exp-container">
-            <h2>Experience</h2>
+            
             {experiences.map((exp, index) => (
               <ExpCard key={index} {...exp}/>
             ))}
           </div>
 
+          <h2>Contact Me</h2>
+
           <div id="contact-container">
-            <h2>Contact Me</h2>
+            
             <div className="contact-links">
               <div>
                 <a href="https://www.linkedin.com/in/brian-yin-1ab26a223/">
-                  <img src="src/assets/linkedin.svg" width="50" height="50" alt="Linkedin"/>
+                  <img src="/linkedin.svg" width="50" height="50" alt="Linkedin"/>
                 </a>
                 <div>Brian Yin</div>
               </div>
               <div>
                 <a href="https://github.com/Brain256">
-                  <img src="src/assets/github.svg" width="50" height="50" alt="Github"/>
+                  <img src="/github.svg" width="50" height="50" alt="Github"/>
                 </a>
                 <div>Brain256</div>
               </div>
               <div>
-                <img src="src/assets/gmail.png" width="50" height="50" alt="Email" />
+                <img src="/gmail.png" width="50" height="50" alt="Email" />
                 <div>brianyin256@gmail.com</div>
               </div>
             </div>

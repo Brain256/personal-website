@@ -33,6 +33,7 @@
 }
 
 .project-links {
+    bottom:5px; 
     display:flex; 
     height:70px; 
     align-items:center; 
@@ -53,4 +54,9 @@
 .demo:hover {
     background-color: rgb(31, 215, 247); 
     color:black; 
+}
+
+.project-img {
+    border: 5px rgba(31, 215, 247, 0.8) solid; 
+    border-radius:10px; 
 }

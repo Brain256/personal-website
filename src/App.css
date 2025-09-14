@@ -46,7 +46,8 @@ html {
 #project-container, #exp-container, #contact-container {
   padding:20px 200px;
   display:grid; 
-  gap:30px; 
+  grid-template-columns:repeat(auto-fit, minmax(700px, 1fr));
+  gap:40px; 
   background-color:rgb(33, 19, 82); 
 }
 
@@ -54,6 +55,7 @@ h2 {
   color:white; 
   font-size:3rem;
   margin-bottom:10px;  
+  padding:20px 200px; 
 }
 
 #nav {
