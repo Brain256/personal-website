@@ -100,7 +100,7 @@ h2 {
 /* responsive  design */
 
 /* tanlet */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   #project-container,
   #exp-container,
   #contact-container {
@@ -123,7 +123,7 @@ h2 {
 }
 
 /* Phones */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   #project-container,
   #exp-container,
   #contact-container {

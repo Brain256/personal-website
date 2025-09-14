@@ -64,7 +64,7 @@
 /* responsive  design */
 
 /* Phones */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .project-card, .exp-card {
         padding:15px; 
     }
