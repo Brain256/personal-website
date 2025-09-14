@@ -60,3 +60,15 @@
     border: 5px rgba(31, 215, 247, 0.8) solid; 
     border-radius:10px; 
 }
+
+/* responsive  design */
+
+/* tanlet */
+@media (max-width: 1024px) {
+ 
+}
+
+/* Phones */
+@media (max-width: 600px) {
+ 
+}
