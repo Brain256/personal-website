@@ -11,7 +11,7 @@ const projects = [
   {
     title: "Punch Perfect",
     description: ["Pose-Detection boxing game only requiring a webcam", "utilizes MediaPipe.js for real-time pose detection", "Includes game mode such as targets mode, reaction mode, and fruit ninja mode"], 
-    skills: ["Javascript", "React", "MediaPipe.js", "Node.js", "Express.js", "Supabase (PostgresSQL)"],
+    skills: ["Javascript", "React", "MediaPipe.js", "Node.js", "Express.js", "Supabase (PostgreSQL)"],
     github: "https://github.com/AaronXu07/CV-Boxing-Game",
     website: 'https://punchperfect.vercel.app/', 
     youtube: null,
