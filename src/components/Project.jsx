@@ -1,38 +1,31 @@
 import './Cards.css'
 
-function Project({title, description, skills, img, github, website, youtube}) {
+function Project({title, description, skills, github, website, youtube}) {
     return (
         <>
             <div className="project-card">
-                <div>
-                    <img className="project-img" src={img} alt="None" width="120" height="120"></img>
-                    <div className="project-links">
-                    
-                    {github && <a href={github}>
-                        <img src="/github.svg" height="30"></img>
-                    </a>}
-
-                    {website && <a className="demo" href={website}>
-                        Demo
-                    </a>}
-                    
-                    {youtube && <a href={youtube}>
-                        <img src="/youtube.png" height="30"></img>
-                    </a>}
-                    
-                </div>
-                </div>
-                <div className="card-text">
+                <div className="project-header">
                     <div className="title">{title}</div>
-                    <div className="skills">{skills}</div>
-                    <ul className="desc-list">{description.map((point, index) => (
-                        <li key={index}>{point}</li>
-                    ))}</ul>
-                  
-                    
+                    <div className="project-links">
+                        {github && <a href={github} target="_blank" rel="noopener noreferrer" title="GitHub">
+                            <img src="/github.svg" height="35" alt="GitHub"></img>
+                        </a>}
+                        {website && <a className="demo" href={website} target="_blank" rel="noopener noreferrer">
+                            Visit Website
+                        </a>}
+                        {youtube && <a href={youtube} target="_blank" rel="noopener noreferrer" title="YouTube">
+                            <img src="/youtube.png" height="40" alt="YouTube"></img>
+                        </a>}
+                    </div>
                 </div>
-                
-                
+                <div className="skills-tags">
+                    {skills.map((skill, index) => (
+                        <span key={index} className="skill-tag">{skill}</span>
+                    ))}
+                </div>
+                <ul className="desc-list">{description.map((point, index) => (
+                    <li key={index}>{point}</li>
+                ))}</ul>
             </div>
         </>
     )
