@@ -11,7 +11,11 @@
     box-shadow: 0 8px 32px rgba(31, 215, 247, 0.3);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid rgba(31, 215, 247, 0.2);
+    width:100%; 
+}
+.project-card.compact {
     height: auto;
+    min-height: 240px;
 }
 
 .project-card:hover {
@@ -171,6 +175,7 @@ a {
 @media (max-width: 1100px) {
     .project-card {
         padding: 30px;
+        min-height: 340px;
     }
     
     .title {
@@ -190,6 +195,7 @@ a {
 @media (max-width: 700px) {
     .project-card {
         padding: 25px;
+        min-height: initial;
     }
     
     .project-header {

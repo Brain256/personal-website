@@ -1,9 +1,9 @@
 import './Cards.css'
 
-function Project({title, description, skills, github, website, youtube}) {
+function Project({title, description, skills, github, website, youtube, compact}) {
     return (
         <>
-            <div className="project-card">
+            <div className={`project-card${compact ? ' compact' : ''}`}>
                 <div className="project-header">
                     <div className="title">{title}</div>
                     <div className="project-links">

@@ -46,7 +46,8 @@ const projects = [
     skills: ["ESP32", "C++"], 
     github: 'https://github.com/Brain256/Face-Detection-Door-Lock',
     website: null, 
-    youtube: "https://www.youtube.com/watch?v=OrecraZhADc"
+    youtube: "https://www.youtube.com/watch?v=OrecraZhADc",
+    compact: true
   },
 
 ]
@@ -145,6 +146,25 @@ function App() {
     [],
   );
 
+  // Scroll-reveal animations
+  useEffect(() => {
+    const elements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -10% 0px' }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       
@@ -174,54 +194,80 @@ function App() {
         <div className="content-container">
 
           <div id="header"> 
-            <div className="text">
-              <div className="intro">Hello, I'm Brian Yin</div>
-              <div className="intro-sub">
-                First Year Computer Science Student at The University Of Waterloo
+            <div className="hero-card">
+              <div className="text">
+                <div className="intro">Hello, I'm</div>
+                <h1 className="hero-name"><span className="name-gradient">Brian Yin</span></h1>
+                <div className="intro-sub">
+                  1st Year CS @ The University of Waterloo
+                </div>
+              </div>
+              <div id="contact-container" className="reveal" style={{transitionDelay: '120ms'}}>
+                <div className="contact-links">
+                  <div className="contact-item">
+                    <a aria-label="LinkedIn" href="https://www.linkedin.com/in/brian-yin-1ab26a223/" target="_blank" rel="noreferrer noopener">
+                      <img className="contact-imgs" src="/hero-icons/icons8-linkedin-30.png" width="40" alt="LinkedIn"/>
+                    </a>
+                    <div>LinkedIn</div>
+                  </div>
+                   <div className="contact-item">
+                    <a aria-label="Email" href="mailto:brianyin256@gmail.com" title="brianyin256@gmail.com">
+                      <img className="contact-imgs" src="/hero-icons/icons8-email-50.png" width="40" alt="Email" />
+                    </a>
+                    <div>Email</div>
+                  </div>
+                  <div className="contact-item">
+                    <a aria-label="GitHub" href="https://github.com/Brain256" target="_blank" rel="noreferrer noopener">
+                      <img className="contact-imgs" src="/hero-icons/icons8-github-30.png" width="40" alt="GitHub"/>
+                    </a>
+                    <div>GitHub</div>
+                  </div>
+                </div>
+              </div>
+              <div className="info-placeholders">
+                <a
+                  className="chip icon"
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  aria-label="Resume (PDF)"
+                  title="Resume (PDF)"
+                >
+                  <img src="/hero-icons/icons8-resume-50.png" alt="Resume" />
+                  Resume
+                </a>
+                <span className="chip icon" title="Phone">
+                  <img src="/hero-icons/icons8-phone-50.png" alt="Phone" />
+                  +1 437-340-8960
+                </span>
+                <span className="chip icon" title="location">
+                  <img src="/hero-icons/icons8-location-50.png" alt="Location" />
+                  Waterloo, ON
+                </span>
               </div>
             </div>
           </div>
 
-          <h2>Projects</h2>
+          <h2 className="reveal">Projects</h2>
 
           <div id="project-container">
             
             {projects.map((project, index) => (
-              <Project key={index} {...project} />
+              <div key={index} className={`reveal tile ${project.compact ? 'compact' : ''}`} style={{ transitionDelay: `${index * 80}ms` }}>
+                <Project {...project} compact={project.compact} />
+              </div>
             ))}
           </div>
 
-          <h2>Experience</h2>
+          <h2 className="reveal">Experience</h2>
 
           <div id="exp-container">
             
             {experiences.map((exp, index) => (
-              <ExpCard key={index} {...exp}/>
+              <div key={index} className="reveal" style={{ transitionDelay: `${index * 80}ms` }}>
+                <ExpCard {...exp}/>
+              </div>
             ))}
-          </div>
-
-          <h2>Contact Me</h2>
-
-          <div id="contact-container">
-            
-            <div className="contact-links">
-              <div>
-                <a href="https://www.linkedin.com/in/brian-yin-1ab26a223/">
-                  <img className="contact-imgs" src="/linkedin.svg" width="40" alt="Linkedin"/>
-                </a>
-                <div>Brian Yin</div>
-              </div>
-              <div>
-                <a href="https://github.com/Brain256">
-                  <img className="contact-imgs" src="/github.svg" width="40" alt="Github"/>
-                </a>
-                <div>Brain256</div>
-              </div>
-              <div>
-                <img className="contact-imgs" src="/gmail.png" width="50" alt="Email" />
-                <div>brianyin256@gmail.com</div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
