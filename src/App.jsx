@@ -184,6 +184,16 @@ function App() {
 
     const update = () => {
       ticking = false;
+      const lock = window.__hashLock;
+      if (lock && Date.now() < lock.until) {
+        // Keep the URL locked to the clicked target during programmatic scroll
+        const target = lock.target;
+        if (target && window.location.hash !== `#${target}`) {
+          const url = `${window.location.pathname}${window.location.search}#${target}`;
+          history.replaceState(null, '', url);
+        }
+        return;
+      }
       const band = window.scrollY + window.innerHeight * 0.3;
       let active = ids[0];
 
