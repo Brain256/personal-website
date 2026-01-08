@@ -146,7 +146,6 @@ function App() {
     [],
   );
 
-  // Scroll-reveal animations
   useEffect(() => {
     const elements = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver(
@@ -163,6 +162,68 @@ function App() {
 
     elements.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const ids = ['about', 'projects', 'career'];
+    let current = window.location.hash.replace('#', '') || '';
+
+    const getOffsets = () =>
+      ids.map((id) => {
+        const el = document.getElementById(id);
+        return { id, top: el ? el.offsetTop : Number.POSITIVE_INFINITY };
+      });
+
+    let offsets = getOffsets();
+
+    const recalc = () => {
+      offsets = getOffsets();
+    };
+
+    let ticking = false;
+
+    const update = () => {
+      ticking = false;
+      const band = window.scrollY + window.innerHeight * 0.3;
+      let active = ids[0];
+
+      for (const { id, top } of offsets) {
+        if (top <= band) active = id;
+      }
+
+      const doc = document.documentElement;
+      if (window.innerHeight + window.scrollY >= doc.scrollHeight - 1) {
+        active = ids[ids.length - 1];
+      }
+
+      if (active && active !== current) {
+        current = active;
+        const url = `${window.location.pathname}${window.location.search}#${active}`;
+        history.replaceState(null, '', url);
+      }
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    };
+
+    const onResize = () => {
+      recalc();
+      update();
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onResize);
+
+    update();
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onResize);
+    };
   }, []);
 
   return (
@@ -193,7 +254,7 @@ function App() {
         </div>
         <div className="content-container">
 
-          <div id="header"> 
+          <div id="about"> 
             <div className="hero-card">
               <div className="text">
                 <div className="intro">Hello, I'm</div>
@@ -250,7 +311,7 @@ function App() {
 
           <h2 className="reveal">Projects</h2>
 
-          <div id="project-container">
+          <div id="projects">
             
             {projects.map((project, index) => (
               <div key={index} className={`reveal tile ${project.compact ? 'compact' : ''}`} style={{ transitionDelay: `${index * 80}ms` }}>
@@ -261,7 +322,7 @@ function App() {
 
           <h2 className="reveal">Experience</h2>
 
-          <div id="exp-container">
+          <div id="career">
             
             {experiences.map((exp, index) => (
               <div key={index} className="reveal" style={{ transitionDelay: `${index * 80}ms` }}>
