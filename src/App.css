@@ -204,7 +204,7 @@ h2 {
   }
 
   .hero-name {
-    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    font-size: 4rem; 
   }
 
   .intro-sub {
@@ -239,7 +239,7 @@ h2 {
   }
 
   .hero-name {
-    font-size: clamp(1.8rem, 8vw, 3rem);
+    font-size: 3rem
   }
 
   .contact-links {
@@ -255,10 +255,8 @@ h2 {
 
   .contact-links > div { min-width: 110px; }
 
-  .contact-imgs {
-    width:25px; 
-    height:auto; 
-  }
+  /* Keep social icons the same size on phones */
+  .contact-imgs { width: 40px; height: auto; }
 
   .contact-links > div {
     justify-content: center;
