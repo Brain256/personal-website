@@ -1,0 +1,92 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-header-inner {
+  max-width: calc(var(--col) + var(--label-col) + var(--gutter));
+  margin: 0 auto;
+  padding: 0 24px;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.wordmark {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.site-header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-width: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+}
+
+.nav-link {
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  transition: color 150ms ease, border-color 150ms ease;
+}
+
+.nav-link:hover {
+  color: var(--fg);
+}
+
+.nav-link.is-active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .site-header-inner {
+    padding: 0 20px;
+    gap: 12px;
+  }
+
+  .wordmark {
+    font-size: 1.125rem;
+  }
+
+  .site-header-right {
+    gap: 12px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-link {
+    font-size: 0.75rem;
+  }
+}
+
+/*
+ * Below this the labels plus the toggle need the full width, and the wordmark
+ * is redundant with the hero directly beneath it.
+ */
+@media (max-width: 440px) {
+  .wordmark {
+    display: none;
+  }
+
+  .site-header-inner {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,11 @@
+/*
+ * Colour and hover styling live with the hero meta row in Hero.css, so this
+ * field matches the links beside it. Only the button reset lives here.
+ */
+.copy-field {
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}

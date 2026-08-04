@@ -1,0 +1,238 @@
+/* Shared styles for Section and every entry type that sits inside one. */
+
+.section {
+  display: grid;
+  grid-template-columns: var(--label-col) minmax(0, 1fr);
+  gap: var(--gutter);
+  padding-top: 56px;
+  scroll-margin-top: calc(var(--header-h) + 16px);
+}
+
+.section-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  /* Optically align the label with the first line of body text. */
+  padding-top: 4px;
+}
+
+.section-body {
+  min-width: 0;
+}
+
+/* Projects filter: flat text buttons, rust underline on the active one. */
+.filter-group {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.filter-button {
+  padding: 0 0 3px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: none;
+  font: inherit;
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+  cursor: pointer;
+  transition: color 150ms ease, border-color 150ms ease;
+}
+
+.filter-button:hover {
+  color: var(--fg);
+}
+
+.filter-button.is-active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/*
+ * Cards rather than hairline-separated rows: entries run three to six lines
+ * each, which a 1px rule was too weak to separate.
+ */
+.entry {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+}
+
+.entry:last-child {
+  margin-bottom: 0;
+}
+
+.entry-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Groups the title with its category tag so the year still sits hard right. */
+.entry-head-main {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  min-width: 0;
+}
+
+.entry-title {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/*
+ * Software vs hardware. Outline against fill rather than two hues — a second
+ * colour would compete with the accent, which already carries the years and
+ * section labels.
+ */
+.entry-tag {
+  flex-shrink: 0;
+  padding: 1px 8px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.entry-tag.is-software {
+  border-color: color-mix(in srgb, var(--accent) 38%, transparent);
+}
+
+.entry-tag.is-hardware {
+  background: var(--accent-soft);
+}
+
+/* Years sit in the accent — the main rhythm alongside the section labels. */
+.entry-head .meta {
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.entry-sub {
+  color: var(--fg);
+  font-size: 0.9375rem;
+  margin-top: 2px;
+}
+
+.entry-blurb {
+  margin-top: 8px;
+}
+
+.entry-list {
+  margin-top: 10px;
+}
+
+/* These bullets are the substance of the page, so they read as body text. */
+.entry-list li {
+  position: relative;
+  padding-left: 18px;
+  margin-top: 4px;
+  color: var(--fg);
+  font-size: 1rem;
+  max-width: var(--measure);
+}
+
+.entry-list li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 0.68em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.entry-tech {
+  margin-top: 12px;
+}
+
+.entry-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 12px;
+}
+
+.entry-links a {
+  font-size: 0.875rem;
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 4px;
+  transition: text-decoration-color 150ms ease;
+}
+
+.entry-links a:hover {
+  text-decoration-color: var(--accent);
+}
+
+.entry-links a::after {
+  content: ' \2197';
+  font-size: 0.8em;
+}
+
+/* Skills: label + comma-joined items, aligned in a small two-column grid. */
+.skill-row {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 16px;
+  padding: 10px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.skill-row:first-child {
+  border-top: none;
+}
+
+.skill-row dt {
+  font-size: 0.875rem;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
+.skill-row dd {
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+.now-list li {
+  padding: 4px 0;
+  max-width: var(--measure);
+}
+
+@media (max-width: 900px) {
+  .section {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    padding-top: 48px;
+  }
+
+  .section-label {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .entry-head {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .skill-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+  }
+}

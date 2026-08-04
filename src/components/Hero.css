@@ -1,0 +1,106 @@
+/*
+ * No background band — the hero sits on the page and earns its weight through
+ * type scale and whitespace, with the accent reduced to the eyebrow and the
+ * dot grid's highlight. Positioned so DotGrid can fill it.
+ */
+.hero {
+  position: relative;
+  padding: 96px 0 72px;
+  scroll-margin-top: var(--header-h);
+}
+
+/* Mirrors .page so hero text aligns with the sections below it. */
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: calc(var(--col) + var(--label-col) + var(--gutter));
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hero-name {
+  font-size: clamp(3rem, 9vw, 5.5rem);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+/* Same treatment as .section-label, so the hero joins the page's rhythm. */
+.hero-edu {
+  margin: 18px 0 0;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  max-width: none;
+}
+
+.hero-intro {
+  margin: 22px 0 0;
+  font-size: 1.125rem;
+  color: var(--fg);
+  max-width: var(--measure);
+}
+
+/* Hairline instead of interpuncts: the row is six items and dots made it soup. */
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 28px;
+  margin-top: 40px;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+  font-size: 0.9375rem;
+}
+
+/* Interactive items sit at full strength; the location recedes. */
+.hero-meta a,
+.copy-field {
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 4px;
+  transition: color 150ms ease, text-decoration-color 150ms ease;
+}
+
+.hero-meta a:hover,
+.copy-field:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+.hero-location {
+  color: var(--fg-muted);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 72px 0 56px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 48px 0 44px;
+  }
+
+  .hero-inner {
+    padding: 0 20px;
+  }
+
+  .hero-edu {
+    margin-top: 14px;
+    font-size: 0.8125rem;
+  }
+
+  .hero-intro {
+    margin-top: 18px;
+    font-size: 1.0625rem;
+  }
+
+  .hero-meta {
+    gap: 8px 20px;
+    margin-top: 32px;
+  }
+}

@@ -1,0 +1,141 @@
+:root {
+  --bg: #fcfcfc;
+  --surface: #f4f0ec;
+  --fg: #14110f;
+  --fg-muted: #4f4945;
+  --rule: #e5e1dd;
+  /* Hero dot lattice. Deliberately much stronger than --rule: this is a
+     visible element, not a hairline, and at 1-2px it needs the weight. */
+  --dot: #b1a89f;
+  --accent: #c1502e;
+  --accent-soft: #f5e9e4;
+
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --measure: 68ch;
+  --col: 720px;
+  --label-col: 120px;
+  --gutter: 32px;
+  --header-h: 64px;
+}
+
+/*
+ * An inline script in index.html stamps data-theme before first paint, so it is
+ * always one of these two — no prefers-color-scheme block needed here, which
+ * keeps the toggle authoritative.
+ */
+:root[data-theme='dark'] {
+  --bg: #131110;
+  --surface: #1c1918;
+  --fg: #f0ece8;
+  --fg-muted: #a79e97;
+  --rule: #2e2926;
+  --dot: #9c918a;
+  --accent: #e07a52;
+  --accent-soft: #2a1c16;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--fg);
+  transition: background-color 150ms ease, color 150ms ease;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+  margin: 0;
+}
+
+p {
+  margin: 0 0 1em 0;
+  max-width: var(--measure);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Small meta text: years, tech lists, section labels. */
+.meta {
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+  letter-spacing: 0.01em;
+}
+
+.page {
+  max-width: calc(var(--col) + var(--label-col) + var(--gutter));
+  margin: 0 auto;
+  padding: 0 24px 120px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--bg);
+  color: var(--fg);
+  padding: 12px 16px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: 8px;
+  top: 8px;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 0.9375rem;
+  }
+
+  .page {
+    padding: 0 20px 80px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
